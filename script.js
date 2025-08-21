@@ -27,10 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const cliente = document.getElementById('cliente').value.trim();
         const tema = document.getElementById('tema').value.trim();
         const duracion = document.getElementById('duracion').value.trim();
+        const fecha = document.getElementById('fecha').value;
         const file = fileInput.files[0];
 
         // Validate form
-        if (!cliente || !tema || !duracion || !file) {
+        if (!cliente || !tema || !duracion || !fecha || !file) {
             alert('Por favor, completa todos los campos requeridos.');
             return;
         }
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             formData.append('cliente', cliente);
             formData.append('tema', tema);
             formData.append('duracion', duracion);
+            formData.append('fecha', fecha);
             formData.append('documentacion', file);
 
             // Send data to webhook
